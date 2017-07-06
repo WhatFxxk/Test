@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style>
+  body{ font-family:Verdana, Geneva, sans-serif;
+         font-size:12px;
+		 line-height:1.5;
+	  }
+	  img{border:0;}
+	  
+  #menuDiv ul{ margin:0 auto; padding:0; list-style:none; width:800px;}
+  #menuDiv ul li{ background:#eee; height:37px; line-height:37px;
+  border-bottom:1px solid #ccc; text-align:center; float:left;
+  width:154px; margin-right:10px;}
+  #menuDiv ul li a{ color:#000; text-decoration: underline; display:block;
+   width:154px; height:37px;
+}
+   #menuDiv ul li a:hover{ background-color: #F06;
+   }
+    #menuDiv ul li a #on{background-color:#000000;}
+	.clear{ clear:both;}
+	 #menuDiv ul li ul li{ float:none; width:154px; margin:0px; text-align:center;}
+	 #menuDiv ul li ul{ display:none; width:154px;}
+	 #menuDiv ul li.listshow ul{ display:block;}
+	 
+</style>
+</head>
+<script>
+function menuFix()
+{
+	var sf=document.getElementById("menuDiv").getElementsByTagName("li");
+	for(var i=0;i<sf.length;i++)
+	{
+		sf[i].onmouseover=function(){
+			this.className+=(this.className.length>0?" ":"")+"listshow";
+			}
+			sf[i].onmouseout=function(){
+			this.className=this.className.replace("listshow","");
+		}
+	}
+}
+		window.onload=menuFix;
+</script>
+<body>
+<div id="menuDiv">
+   <ul>
+      <li> <a href="#"id="on">C++</a>
+            <ul> 
+              <li><a href="#">编程</a>
+              <li><a href="#">语言</a>
+              <li><a href="#">C</a>
+            </ul>
+      </li>
+               
+      <li><a href="#">java</a>
+          <ul>
+             <li><a href="#">java编程</a>
+             <li><a href="#">java语言</a>
+             <li><a href="#">javaC</a>
+          </ul>       
+      </li>
+      <div class="clear"></div>
+   </ul>
+</div>
+</body>

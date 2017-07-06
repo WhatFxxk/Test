@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tab选项卡</title>
+<link href="淘宝css.css" rel="stylesheet" />
+<script src="js/tab.js">
+
+</script>
+</head>
+
+<body>
+
+<div id = "tab" class="tab">
+	<!--头部-->
+	<div id="tab_head" class="tab_head">
+    	<ul>
+        	<li class="selected"> <a href="#">公告</a></li>
+            <li> <a href="#">规则</a></li>
+            <li> <a href="#">论坛</a></li>
+            <li> <a href="#">安全</a></li>
+            <li> <a href="#">公益</a></li>
+        </ul>
+    </div>
+    <!--内容-->
+    <div id="nav_content" class="nav_content">
+    	<div class="content" style="display:block;">
+        	<ul>
+            	<li> <a href="#">阿里CEO张勇内部讲话：阿里的梦想与坚持</a></li>
+                <li> <a href="#">淘宝最严新规整治幽灵店铺 广告商品将难逃小黑屋</a></li>
+                <li> <a href="#">聚划算义卖9万斤猕猴桃 为灾后老人改善生活</a></li>
+                <li> <a href="#">马云扎堆"侃球"：为未来而战</a></li>
+            </ul>
+        </div>
+        <div class="content" style="display:block;">
+        	<ul>
+            	<li> <a href="#">开店认证假货规则变更</a></li>
+                <li> <a href="#">未经备案商品禁售规则</a></li>
+                <li> <a href="#">新增旅行市场WIFI规则</a></li>
+                <li> <a href="#">淘宝争议处理规则变更</a></li>
+            </ul>
+        </div>
+        <div class="content" style="display:block;">
+        	<ul>
+            	<li> <a href="#">G20杭州快递影响</a></li>
+                <li> <a href="#">杭州"低慢小"禁飞</a></li>
+                <li> <a href="#">十八纸颠覆家具</a></li>
+                <li> <a href="#">是赚钱还是骗子</a></li>
+            </ul>
+        </div>
+        <div class="content" style="display:block;">
+        	<ul>
+            	<li> <a href="#">小心被骗子买家盯上</a></li>
+                <li> <a href="#">淘宝网广告商品管控</a></li>
+                <li> <a href="#">代运营生态净化启动</a></li>
+                <li> <a href="#">新手专家自杀式玩法</a></li>
+            </ul>
+        </div>
+        <div class="content" style="display:block;">
+        	<ul>
+            	<li> <a href="#">阿里捐赠700万元救灾</a></li>
+                <li> <a href="#">阿里与残联出助残政策</a></li>
+                <li> <a href="#">公益宝贝卖家发票索取</a></li>
+                <li> <a href="#">公益机构淘宝开店攻略</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+
+</body>
+<script>
+// JavaScript Document
+//自定义函数
+function $(id){
+	return typeof id === 'string' ? document.getElementById(id) : id;
+	}
+
+window.onload=function(){
+	var titles = $('tab_head').getElementsByTagName('li');
+	var divs = $('nav_content').getElementsByClassName('content');
+	if(titles.length != divs.length) return;
+	
+	for(var i = 0 ; i < titles.length; i++ ){
+		titles[i].id = i;
+		titles[i].onmouseover = function(){
+			for(var j = 0 ; j < titles.length; j++){
+				titles[j].className='';
+				divs[j].style.display = 'none';
+				}
+			this.className = 'selected';
+			divs[this.id].style.display = 'block';
+			};
+		}
+	
+	}</script>
+</html>
+

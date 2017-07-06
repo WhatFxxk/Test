@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#D1 img{
+	display:none;
+}
+#D2{
+	margin:auto;
+	font:Arial, Helvetica, sans-serif;
+	font-size:190px;
+	color:#03F;}
+#img2{
+	display:none;}
+</style>
+</head>
+
+<body>
+<img   id="img1"src="images/IMG_2077.JPG" height="200" width="300"/><br/>
+<button  id="btn1" value="切换"  style="float:left">切换</button>
+<button  id="btn2" value="隐藏" >隐藏</button>
+<div id="D2">5</div>
+<img   id="img2"src="images/IMG_2066.JPG" height="300" width="400"/>
+<div id="D1">
+   <img src="images/_MG_0721 副本_调整大小.jpg" height="300" width="400"/>
+   <img src="images/20140827_173756.jpg"height="300" width="400" />
+   <img src="images/IMG_2066.JPG" height="300" width="400"/>
+   <img  src="images/IMG_2765.JPG"height="300" width="400"/> 
+ </div>
+ 
+ <button id="btn3">上一张</button>
+<button id="btn4">下一张</button>
+</body>
+
+<script>
+/*next up*/
+
+var div2=document.getElementById("D1").getElementsByTagName("img");
+var btn3=document.getElementById("btn3");
+var btn4=document.getElementById("btn4");
+/*next*/
+ div2[0].style.display='block';
+ 	   var n=0;
+	   var maxx=4;
+	   var minx=1;
+	   var curr = minx;
+   btn4.onclick=function(){	
+   if(curr == maxx){
+			curr = minx;
+			for(var i=0;i<div2.length;i++)
+	    {
+			div2[i].style.display='none';
+		}div2[curr-1].style.display='block';
+		
+		         }
+		else{curr=curr+1;
+			for(var i=0;i<div2.length;i++)
+	    {
+			div2[i].style.display='none';
+		}  div2[curr-1].style.display='block';
+		
+		         }		 
+			  
+  
+   }
+   
+ /*up*/  
+  btn3.onclick=function(){
+  if(curr == minx){
+			curr = maxx;
+			for(var i=0;i<div2.length;i++)
+	    {
+			div2[i].style.display='none';
+		}
+			div2[curr-1].style.display='block';
+			}
+			else{
+				
+				curr=curr-1;
+				for(var i=0;i<div2.length;i++)
+	            {
+			div2[i].style.display='none';
+		        }
+				div2[curr-1].style.display='block';
+				}
+	
+		
+	        
+   }
+
+/*切换*/
+
+var arr=document.getElementById('img1');
+var btn1=document.getElementById('btn1');
+var btn2=document.getElementById('btn2');
+ btn1.onclick=function(){
+	 if(arr.src.indexOf("images/IMG_2077.JPG",0)!=-1)
+	 {
+	 arr.src="images/IMG_2732.JPG";
+	 }
+	 else{arr.src="images/IMG_2077.JPG";}
+ }
+ 
+ /*隐藏*/
+ btn2.onclick=function()
+ {
+ if(btn2.textContent=="隐藏")
+ {  arr.style.visibility='hidden';
+    btn2.textContent="显示";
+	
+	 }
+	 else{arr.style.visibility='visible';
+    btn2.textContent="隐藏";}
+ }
+   var x=function (){
+	   var r=0;
+	   for(var i=0;i<arguments.length;i++)
+	   {
+		   r=r+arguments[i];
+		   }
+		   return r;
+	   
+	   };
+	   console.log(x(1,2,4));
+/*定时器*/
+var div1=document.getElementById('D2');
+var img=document.getElementById('img2');
+var timer = setInterval(function (){
+             div1.innerHTML=div1.innerHTML-1;
+			 if(div1.innerHTML==0)
+			 {   clearInterval(timer);
+			     div1.style.display='none';
+				 img.style.display='block';
+				 }
+	},1000);
+	/*上一张、下一张*/
+var Cat=function(){
+	this.name='李慧慧';
+	this.age=18;
+	this.gender='f';
+	this.eat=function(meat){
+		console.log(this.name+'like'+meat);}
+	}
+ var cat=new Cat();
+ console.log(cat.eat('race'));
+ 
+ var Dog={
+	 name: '刘杰',
+	 age:30,
+	 gender: '不详',
+	 eat:function(){
+		 console.log(this.name+'like eat  meat'+'\t性别：'+this.gender);
+		 }
+	 }
+	 console.log(Dog.eat());
+	 
+	 	function sum2( numbers ){
+		var result = null;
+		for(var i = 0 ; i < numbers.length; i++){
+			result = result + numbers[i];
+			}
+			return result;
+		}
+	result = sum2([2,4,6,8]);
+	console.log(result);z
+
+</script>
+</html>

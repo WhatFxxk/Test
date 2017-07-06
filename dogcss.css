@@ -1,0 +1,155 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*使用自己的字体*/
+@font-face{
+	font-family:BebasNeue-webfont;
+	src:url(fonts/BebasNeue-webfont.ttf);
+	}
+
+/*通用设置*/
+a, address, b, big, blockquote, body, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{
+    padding: 0px;
+    margin: 0px;
+}
+
+a{
+	color:white;
+	text-decoration:none;
+	}
+
+ul{
+	list-style:none;
+	}
+
+body{
+	font-family:BebasNeue-webfont;
+	background:url(images/pattern.gif);
+	}
+
+/*头部设置*/
+#top{
+	background-color:red;
+	height:3px;
+	}
+
+#nav{
+	text-align:center;
+	}
+#nav ul{
+	display:inline-block;
+	}
+#nav ul li{
+	float:left;
+	margin-left:20px;
+	height:43px;
+	line-height:43px;
+	}
+#nav ul li a{
+	display:inline-block;
+	font-size:34px;
+	width:220px;
+	}
+#nav ul li a.select{
+	background-color:white;
+	color:black;
+	}
+#nav ul li a:hover{
+	background-color:white;
+	color:black;
+	}
+
+
+/*内容列表设置*/
+#list{
+	margin-top:40px;
+	background-color:white;
+	text-align:center;
+	}
+#list .item{
+	width:380px;
+	display:inline-block;
+	text-align:left;
+	margin:20px;
+	}
+#list .item p{
+	font-family:Arial, Helvetica, sans-serif;
+	color:#999;
+	margin:5px 0px;
+	}
+#list .item a{
+	display:inline-block;
+	background-color:#c0392b;
+	width:130px;
+	height:43px;
+	line-height:43px;
+	text-align:center;
+	font-size:28px;
+	}
+#list .item a:hover{
+	background-color:black;
+	}
+
+/*尾部*/
+#footer{
+	text-align:center;
+	}
+#footer h2{
+	color:white;
+	margin-top:20px;
+	margin-bottom:5px;
+	}
+#footer ul li a{
+	margin:0px 5px;
+	}
+#footer ul li a:hover{
+	opacity:0.5;
+	}
+
+
+
+/*响应式设计*/
+
+@media screen and (max-width:1280px){
+	#nav ul li a{
+		font-size:26px;
+		width:150px;
+		}
+	#nav ul li{
+		height:36px;
+		line-height:36px;
+		}
+	#list{f
+		margin-top:36px;
+		}
+	}
+
+@media screen and (max-width:860px){
+	#nav ul li a{
+		font-size:18px;
+		width:80px;
+		}
+	#nav ul li{
+		height:30px;
+		line-height:30px;
+		}
+	#list{
+		margin-top:26px;
+		}
+	}
+
+@media screen and (max-width:580px){
+	#nav ul li a{
+		font-size:14px;
+		width:60px;
+		}
+	#nav ul li{
+		height:26px;
+		line-height:26px;
+		}
+	#list{
+		margin-top:16px;
+		}
+	}
+
+
